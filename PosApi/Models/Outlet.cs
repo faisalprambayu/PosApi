@@ -1,0 +1,13 @@
+namespace PosApi.Models;
+
+public class Outlet
+{
+    public Guid Id { get; set; } = Guid.NewGuid();
+    public string Name { get; set; } = string.Empty;
+    public string? Address { get; set; }
+    public bool IsActive { get; set; } = true;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    public ICollection<AppUser> Users { get; set; } = new List<AppUser>();
+    public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+}
